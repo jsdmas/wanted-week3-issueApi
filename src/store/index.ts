@@ -1,7 +1,9 @@
 import { combineReducers, createStore } from 'redux';
 
-const rootReducer = combineReducers({});
+import issuePageReducer from './issuePage';
 
-const store = createStore(rootReducer);
+const rootReducer = combineReducers({ page: issuePageReducer });
 
-export default store;
+export const store = createStore(rootReducer);
+
+export type RootState = ReturnType<typeof rootReducer>;
