@@ -14,6 +14,7 @@ function Header({ owner, repo }: Props) {
     </Title>
   );
 }
+
 const Title = styled.header`
   display: flex;
   justify-content: center;
@@ -24,6 +25,7 @@ const Title = styled.header`
     font-size: 2.125rem;
     color: rgba(0, 0, 0, 0.7);
   }
+  margin-bottom: 30px;
 `;
 
 export default Header;

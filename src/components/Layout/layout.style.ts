@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 export const Wrapper = styled.main`
   margin: auto;
   width: 40vw;
+  min-width: 350px;
   height: 100vh;
 `;
 
