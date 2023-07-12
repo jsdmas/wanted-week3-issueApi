@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 
-function Loading() {
-  return <Loader></Loader>;
+function Loader() {
+  return <LoaderSpan></LoaderSpan>;
 }
 
-const Loader = styled.span`
+const LoaderSpan = styled.span`
   width: 48px;
   height: 48px;
   border: 5px solid black;
@@ -28,4 +28,4 @@ const Loader = styled.span`
   }
 `;
 
-export default Loading;
+export default Loader;
