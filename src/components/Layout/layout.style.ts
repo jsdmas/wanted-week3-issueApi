@@ -11,4 +11,5 @@ export const BackGround = styled.section`
   height: 100%;
   border: 5px solid black;
   border-bottom: none;
+  padding: 10px;
 `;

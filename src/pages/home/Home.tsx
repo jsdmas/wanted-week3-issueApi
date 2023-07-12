@@ -8,6 +8,6 @@ function Home() {
     getGithubIssue();
   }, []);
 
-  return <Layout header={<Header />}></Layout>;
+  return <Layout header={<Header owner="facebook" repo="react" />}></Layout>;
 }
 export default Home;
