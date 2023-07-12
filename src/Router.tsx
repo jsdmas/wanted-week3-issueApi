@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Loader from './components/Loader';
 
 const Home = lazy(() => import('./pages/home/index'));
-const Issue = lazy(() => import('./pages/issue/index'));
+const Issue = lazy(() => import('./pages/issuePage/index'));
 const NotFound = lazy(() => import('./pages/notFound/index'));
 
 function Router() {

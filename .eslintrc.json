@@ -29,9 +29,6 @@
   ],
 
   "rules": {
-    "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": ["warn"],
-
     "react/react-in-jsx-scope": "off",
     "import/no-anonymous-default-export": "off",
     "import/newline-after-import": "error",
@@ -65,7 +62,8 @@
         "prev": ["const", "let", "var"],
         "next": ["const", "let", "var"]
       }
-    ]
+    ],
+    "no-unused-vars": "off"
   },
 
   "settings": {

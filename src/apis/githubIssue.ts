@@ -22,7 +22,5 @@ export const getGithubIssue = async () => {
     },
   });
 
-  console.log(data);
-
   return data;
 };
