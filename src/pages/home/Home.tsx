@@ -8,8 +8,9 @@ import { Iissue } from 'src/types/dataType';
 
 function Home() {
   const [data, setData] = useState([]);
+
   const observerDiv = useRef<HTMLDivElement>(null);
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(4);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,14 +26,11 @@ function Home() {
       { threshold: 0.5 },
     );
 
-    if (observerDiv.current) {
-      observer.observe(observerDiv.current);
-    }
+    if (observerDiv.current) observer.observe(observerDiv.current);
   }, [page]);
 
-  // redux로 page number 관리
+  // redux로 page number, issue data 관리
   // contextAPi로 data넘겨주기
-  // intersectionObserver 설정
 
   return (
     <Layout header={<Header owner="facebook" repo="react" />}>
