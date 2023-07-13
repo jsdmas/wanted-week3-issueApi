@@ -47,6 +47,7 @@
 
 # 할일
 
-1. data 상태는 context로 다루기
-2. loading redux 상태 추가
+1. loading redux 상태 추가
+2. owner, repo redux 상태 추가
 3. detail page 추가
+4. axios 인터셉터 추가

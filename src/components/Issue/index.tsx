@@ -1,11 +1,11 @@
 import { PATH } from 'src/constants/path';
-import { Iissue } from 'src/types/dataType';
+import { IissueData } from 'src/types/dataType';
 
 import timeHelper from '@/utils/timeHelper';
 
 import * as S from './issue.stye';
 
-function Issue({ title, number, created_at, comments, user: { login } }: Iissue) {
+function Issue({ title, number, created_at, comments, user: { login } }: IissueData) {
   const [year, month, day] = timeHelper(created_at);
 
   return (

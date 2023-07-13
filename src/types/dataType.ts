@@ -1,4 +1,4 @@
-export interface Iissue {
+export interface IissueData {
   url: string;
   repository_url: string;
   labels_url: string;
