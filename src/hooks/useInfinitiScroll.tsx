@@ -6,10 +6,9 @@ import { RootState } from '@/store';
 import { increase } from '@/store/issuePage';
 import { IissueData } from '@/types/dataType';
 
-type ObserveType = (element: HTMLElement) => void;
-
 function useInfinitiScroll(setDataState: React.Dispatch<React.SetStateAction<IissueData[]>>) {
   const pageState = useSelector((store: RootState) => store.page);
+
   const dispatch = useDispatch();
 
   const pageStateRef = useRef(pageState);
@@ -33,7 +32,7 @@ function useInfinitiScroll(setDataState: React.Dispatch<React.SetStateAction<Iis
     ),
   );
 
-  const observe: ObserveType = (element: HTMLElement) => {
+  const observe = (element: HTMLElement) => {
     observer.current.observe(element);
   };
 
