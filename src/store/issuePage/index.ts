@@ -10,9 +10,9 @@ export const increase = () => ({
 // 액션 객체 타입
 type PageAction = ReturnType<typeof increase>;
 // 이 리덕스 모듈에서 관리할 타입 정의
-type PageState = { page: number };
+export type PageState = { page: number };
 // 초기상태 선언
-const initalState: PageState = { page: 4 };
+const initalState: PageState = { page: 1 };
 
 export default function issuePageReducer(
   state: PageState = initalState,
@@ -20,7 +20,7 @@ export default function issuePageReducer(
 ): PageState {
   switch (action.type) {
     case 'page/INCREMENT':
-      return { ...state, page: state.page + 4 };
+      return { ...state, page: state.page + 1 };
     default:
       return state;
   }
