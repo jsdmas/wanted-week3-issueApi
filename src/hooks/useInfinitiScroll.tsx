@@ -26,7 +26,6 @@ function useInfinitiScroll(
           if (entry.isIntersecting) {
             dispatch(startLoading());
             api(pageStateRef.current).then((data) => {
-              // 광고 추가해서 가공 후 넣어주기
               const addAdData = addAd(data);
 
               setDataState((prevData) => [...prevData, ...addAdData]);
