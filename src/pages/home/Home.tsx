@@ -32,7 +32,6 @@ function Home() {
   useEffect(() => {
     if (observerDiv.current) observe(observerDiv.current);
   }, [observe]);
-  console.log(data);
 
   return (
     <Layout header={<Header owner="facebook" repo="react" />}>
