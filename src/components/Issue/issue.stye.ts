@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 
 export const Item = styled.li`
   min-height: 60px;
@@ -36,4 +37,13 @@ export const Comment = styled.span`
   font-size: smaller;
   white-space: nowrap;
   place-items: center right;
+`;
+
+export const LinkStyle = styled(Link)`
+  &:hover {
+    li {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+    color: rgba(0, 0, 0, 0.6);
+  }
 `;

@@ -11,7 +11,7 @@ function useIntersectionObserver(callback: any) {
           }
         });
       },
-      { threshold: 0.5 },
+      { threshold: 1 },
     ),
   );
   const observe = (element: HTMLElement) => {

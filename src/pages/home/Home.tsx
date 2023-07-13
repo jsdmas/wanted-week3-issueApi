@@ -23,6 +23,7 @@ function Home() {
   const observerDiv = useRef<HTMLDivElement>(null);
   const observe = useIntersectionObserver(() => {
     getGithubIssue(stateRef.current).then((data) => {
+      // 광고 추가해서 가공 후 넣어주기
       setData((prevData) => [...prevData, ...data]);
       dispatch(increase());
     });
@@ -31,6 +32,7 @@ function Home() {
   useEffect(() => {
     if (observerDiv.current) observe(observerDiv.current);
   }, [observe]);
+  console.log(data);
 
   return (
     <Layout header={<Header owner="facebook" repo="react" />}>
