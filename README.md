@@ -50,4 +50,5 @@
 1. loading redux 상태 추가
 2. owner, repo redux 상태 추가
 3. detail page 추가
-4. axios 인터셉터 추가
+4. 광고추가
+5. axios 인터셉터 설정 추가
