@@ -1,15 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getGithubIssue } from 'src/apis/githubIssue';
 import Header from 'src/components/Header/Header';
 import Issue from 'src/components/Issue';
 import IssueList from 'src/components/IssueList';
 import Layout from 'src/components/Layout';
+import useIntersectionObserver from 'src/hooks/useIntersectionObserver';
+import { RootState } from 'src/store';
+import { increase } from 'src/store/issuePage';
 import { Iissue } from 'src/types/dataType';
 
-import useIntersectionObserver from '@/hooks/useIntersectionObserver';
-import { RootState } from '@/store';
-import { increase } from '@/store/issuePage';
+import { getGithubIssue } from '@/apis/githubIssue';
 
 function Home() {
   const [data, setData] = useState<Iissue[]>([]);
