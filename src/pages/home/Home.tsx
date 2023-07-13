@@ -9,10 +9,12 @@ import useInfinitiScroll from '@/hooks/useInfinitiScroll';
 
 function Home() {
   const observerDiv = useRef<HTMLDivElement>(null);
+
+  // 데이터 분리 필요
   const { observe, data } = useInfinitiScroll();
 
   useEffect(() => {
-    if (observerDiv.current) observe(observerDiv.current);
+    if (observerDiv.current) observe(observerDiv?.current);
   }, []);
 
   return (

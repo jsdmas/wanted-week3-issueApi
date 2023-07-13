@@ -9,21 +9,22 @@ import { Iissue } from '@/types/dataType';
 type ObserveType = (element: HTMLElement) => void;
 
 function useInfinitiScroll() {
+  // data는 context API로 뺴서 사용해야함.
   const [data, setData] = useState<Iissue[]>([]);
 
-  const state = useSelector((store: RootState) => store.page);
+  const pageState = useSelector((store: RootState) => store.page);
   const dispatch = useDispatch();
 
-  const stateRef = useRef(state);
+  const pageStateRef = useRef(pageState);
 
-  stateRef.current = state;
+  pageStateRef.current = pageState;
 
   const observer = useRef(
     new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            getGithubIssue(stateRef.current).then((data) => {
+            getGithubIssue(pageStateRef.current).then((data) => {
               // 광고 추가해서 가공 후 넣어주기
               setData((prevData) => [...prevData, ...data]);
               dispatch(increase());

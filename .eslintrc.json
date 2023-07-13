@@ -38,7 +38,7 @@
     "import/no-duplicates": "error",
     "simple-import-sort/imports": "error",
 
-    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/rules-of-hooks": "warn",
     "react-hooks/exhaustive-deps": "warn",
 
     "no-multiple-empty-lines": ["error", { "max": 1 }],

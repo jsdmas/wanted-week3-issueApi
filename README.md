@@ -29,21 +29,12 @@
   - 에러 화면 구현
   - 지정된 조건(open 상태, 코멘트 많은 순)에 맞게 데이터 요청 및 표시
 
-- 선택 사항
-  - CSS-in-JS 적용
-
 ### 개발 조건 및 환경
 
 - 기간: 07/11 화요일 세션 종료 후(17:00) ~ 07/14 금요일 자정(24:00)
-- 언어 : JavaScript / TypeScript
 - 필수 기술: React, Context API
 - 선택 기술:
-  - Redux와 같은 전역 상태 관리 기술(toolkit 사용 가능, RTK-Query는 사용제한)
-  - 스타일 관련 라이브러리(styled-components, emotion, ui kit 등)
-  - 라우팅 관련 라이브러리(react-router-dom)
-  - HTTP Client(axios 등)
   - 마크다운 렌더링 라이브러리
-- 위에 기재된 라이브러리 외 사용 불가
 
 ### 16Team 사용 라이브러리
 
@@ -53,3 +44,9 @@
 - 라우팅 : react-router-dom
 - HTTP Client : Axios
 - 스타일 : emotion
+
+# 할일
+
+1. data 상태는 context로 다루기
+2. loading redux 상태 추가
+3. detail page 추가
