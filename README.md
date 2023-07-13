@@ -47,8 +47,8 @@
 
 # 할일
 
-1. loading redux 상태 추가
-2. owner, repo redux 상태 추가
-3. detail page 추가
-4. 광고추가
-5. axios 인터셉터 설정 추가
+1. owner, repo redux 상태 추가
+2. detail page 추가
+3. 광고추가
+4. axios 인터셉터 설정 추가
+5. api 요청 로직 분리

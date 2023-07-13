@@ -47,3 +47,12 @@ export const LinkStyle = styled(Link)`
     color: rgba(0, 0, 0, 0.6);
   }
 `;
+
+export const AdItem = styled(Item)`
+  grid-template-columns: 1fr;
+  place-items: center center;
+  img {
+    width: 90%;
+    height: 90%;
+  }
+`;

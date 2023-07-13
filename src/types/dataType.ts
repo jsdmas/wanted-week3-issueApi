@@ -27,7 +27,14 @@ export interface IissueData {
   timeline_url: string;
   performed_via_github_app: object;
   state_reason: object;
+  ad?: Ad;
 }
+export type Ad = {
+  image: string;
+  link: string;
+  alt: string;
+  isAd: boolean;
+};
 
 interface Iuser {
   avatar_url: string;

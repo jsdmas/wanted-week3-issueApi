@@ -8,11 +8,9 @@ function IssueField() {
   const datastate = useDataStateContext();
 
   return (
-    <>
-      <IssueList items={datastate}>
-        {(item: IissueData) => <Issue key={item.id} {...item} />}
-      </IssueList>
-    </>
+    <IssueList items={datastate}>
+      {(item: IissueData) => <Issue key={item.id} {...item} />}
+    </IssueList>
   );
 }
 

@@ -10,7 +10,7 @@ export const getGithubIssue = async (pageNumber: PageState) => {
   const queryObject = {
     sort: 'comments',
     state: 'open',
-    per_page: '10', // 가져올 페이지 개수 기본값 : 30
+    per_page: '8', // 가져올 페이지 개수 기본값 : 30
     page: String(pageNumber.page), // 가져올 해당 페이지 넘버
   };
 
