@@ -7,16 +7,17 @@ import useInfinitiScroll from '@/hooks/useInfinitiScroll';
 
 function Observer() {
   const setDataState = useSetDataStateContext();
-
   const observerDiv = useRef<HTMLDivElement>(null);
   const {
     observe,
     isLoadingState: { isLoading },
+    pageStateRef,
   } = useInfinitiScroll(setDataState, getGithubIssue);
 
   useEffect(() => {
     if (observerDiv.current) observe(observerDiv.current);
-  }, [observe]);
+    pageStateRef.current = { page: 1 };
+  }, []);
 
   return (
     <>

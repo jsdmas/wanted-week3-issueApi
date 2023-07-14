@@ -47,6 +47,6 @@ function useInfinitiScroll(
     observer.current.observe(element);
   };
 
-  return { observe, isLoadingState };
+  return { observe, isLoadingState, pageStateRef };
 }
 export default useInfinitiScroll;
