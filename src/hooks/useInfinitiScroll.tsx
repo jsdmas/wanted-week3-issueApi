@@ -5,7 +5,6 @@ import { RootState } from '@/store';
 import { increase, initPageNumber, PageState } from '@/store/issuePage';
 import { startLoading, stopLoading } from '@/store/loading';
 import { IissueData } from '@/types/dataType';
-import addAd from '@/utils/addAdHelper';
 
 import useNavigateErrorPage from './useNavigateErrorPage';
 
@@ -13,6 +12,8 @@ function useInfinitiScroll(
   setDataState: React.Dispatch<React.SetStateAction<IissueData[]>>,
   // eslint-disable-next-line
   api: (pageNumber: PageState) => Promise<any>,
+  // eslint-disable-next-line
+  mutate?: (data: any) => any,
 ) {
   const pageState = useSelector((store: RootState) => store.page);
   const isLoadingState = useSelector((store: RootState) => store.isLoading);
@@ -29,9 +30,13 @@ function useInfinitiScroll(
             dispatch(startLoading());
             api(pageStateRef.current)
               .then((data) => {
-                const addAdData = addAd(data);
+                if (mutate) {
+                  const mutateData = mutate(data);
 
-                setDataState((prevData) => [...prevData, ...addAdData]);
+                  setDataState((prevData) => [...prevData, ...mutateData]);
+                } else {
+                  setDataState((prevData) => [...prevData, ...data]);
+                }
                 dispatch(increase());
                 dispatch(stopLoading());
               })
