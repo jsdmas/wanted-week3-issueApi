@@ -1,6 +1,6 @@
 import Header from '@/components/Header/Header';
 import Layout from '@/components/Layout';
-import { API_URL } from '@/constants/apiUrl';
+import { API_URL } from '@/constants/apiUrlConfig';
 import { DetailDataProvider } from '@/contexts/DetailData';
 
 import SetDetailDataField from './SetDetailDataField';

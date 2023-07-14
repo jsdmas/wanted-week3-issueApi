@@ -1,13 +1,13 @@
-import { API_URL } from '@/constants/apiUrl';
+import { API_CONFIG, API_URL } from '@/constants/apiUrlConfig';
 import { PageState } from '@/store/issuePage';
 
 import { instance } from './instance';
 
 export const getGithubIssue = async (pageNumber: PageState) => {
   const queryObject = {
-    sort: 'comments',
-    state: 'open',
-    per_page: '8',
+    sort: API_CONFIG.sort,
+    state: API_CONFIG.state,
+    per_page: API_CONFIG.per_page,
     page: String(pageNumber.page),
   };
 

@@ -1,7 +1,7 @@
 import Header from 'src/components/Header/Header';
 import Layout from 'src/components/Layout';
 
-import { API_URL } from '@/constants/apiUrl';
+import { API_URL } from '@/constants/apiUrlConfig';
 import { DataProvider } from '@/contexts/Data';
 
 import IssueField from './IssueField';
