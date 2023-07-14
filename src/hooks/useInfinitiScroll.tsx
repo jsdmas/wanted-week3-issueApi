@@ -1,13 +1,13 @@
 import React, { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 
-import { PATH } from '@/constants/path';
 import { RootState } from '@/store';
 import { increase, PageState } from '@/store/issuePage';
 import { startLoading, stopLoading } from '@/store/loading';
 import { IissueData } from '@/types/dataType';
 import addAd from '@/utils/addAdHelper';
+
+import useNavigateErrorPage from './useNavigateErrorPage';
 
 function useInfinitiScroll(
   setDataState: React.Dispatch<React.SetStateAction<IissueData[]>>,
@@ -17,8 +17,7 @@ function useInfinitiScroll(
   const pageState = useSelector((store: RootState) => store.page);
   const isLoadingState = useSelector((store: RootState) => store.isLoading);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-
+  const goToErrorPage = useNavigateErrorPage();
   const pageStateRef = useRef(pageState);
 
   pageStateRef.current = pageState;
@@ -36,10 +35,7 @@ function useInfinitiScroll(
                 dispatch(increase());
                 dispatch(stopLoading());
               })
-              .catch((err) => {
-                navigate(PATH.ERROR_PAGE);
-                alert(err);
-              });
+              .catch(() => goToErrorPage());
           }
         });
       },

@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { getDetailIssue } from '@/apis/githubIssue';
 import Loader from '@/components/Loader';
 import { useSetDetailDataStateContext } from '@/contexts/DetailData';
+import useNavigateErrorPage from '@/hooks/useNavigateErrorPage';
 import { RootState } from '@/store';
 import { startLoading, stopLoading } from '@/store/loading';
 
@@ -13,6 +14,7 @@ import DetailIssueField from './DetailIssueField';
 function SetDetailDataField() {
   const { id } = useParams();
   const setDetailDataState = useSetDetailDataStateContext();
+  const goToErrorPage = useNavigateErrorPage();
   const loadingState = useSelector((store: RootState) => store.isLoading);
   const dispatch = useDispatch();
 
@@ -24,7 +26,9 @@ function SetDetailDataField() {
       setDetailDataState(myData);
     };
 
-    foo().then(() => dispatch(stopLoading()));
+    foo()
+      .then(() => dispatch(stopLoading()))
+      .catch(() => goToErrorPage());
   }, []);
 
   return <>{loadingState.isLoading ? <Loader /> : <DetailIssueField />}</>;
