@@ -54,5 +54,6 @@ export const AdItem = styled(Item)`
   img {
     width: 90%;
     height: 90%;
+    max-height: 100px;
   }
 `;
