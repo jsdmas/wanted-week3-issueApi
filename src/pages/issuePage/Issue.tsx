@@ -55,7 +55,6 @@ function IssuePage() {
             </S.RightBox>
             <S.Comment>코멘트:{data?.comments}</S.Comment>
           </S.Title>
-
           <S.Content>
             <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
           </S.Content>
