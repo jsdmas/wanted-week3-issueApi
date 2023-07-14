@@ -11,12 +11,10 @@ function Observer() {
   const {
     observe,
     isLoadingState: { isLoading },
-    pageStateRef,
   } = useInfinitiScroll(setDataState, getGithubIssue);
 
   useEffect(() => {
     if (observerDiv.current) observe(observerDiv.current);
-    pageStateRef.current = { page: 1 };
   }, []);
 
   return (

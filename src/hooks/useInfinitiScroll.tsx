@@ -45,6 +45,7 @@ function useInfinitiScroll(
 
   const observe = (element: HTMLElement) => {
     observer.current.observe(element);
+    pageStateRef.current = { page: 1 };
   };
 
   return { observe, isLoadingState, pageStateRef };
