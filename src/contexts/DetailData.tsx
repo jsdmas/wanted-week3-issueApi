@@ -2,23 +2,24 @@ import React, { createContext, Dispatch, useContext, useState } from 'react';
 
 import { DetailDataType } from '@/types/detailDataType';
 
-const DetailDataStateContext = createContext<DetailDataType[] | null>(null);
-const SetDetailDataStateContext = createContext<Dispatch<React.SetStateAction<DetailDataType[]>> | null>(
-  null,
-);
+export type SetDetailDataState = Dispatch<React.SetStateAction<DetailDataType>> | null;
+
+const DetailDataStateContext = createContext<Partial<DetailDataType | null>>(null);
+const SetDetailDataStateContext = createContext<SetDetailDataState>(null);
 
 export function DetailDataProvider({ children }: { children: React.ReactNode }) {
-  const [detailData, setDetailData] = useState<DetailDataType[]>([]);
+  const [detailData, setDetailData] = useState<Partial<DetailDataType>>({});
 
   return (
     <DetailDataStateContext.Provider value={detailData}>
-      <SetDetailDataStateContext.Provider value={setDetailData}>
+      <SetDetailDataStateContext.Provider value={setDetailData as SetDetailDataState}>
         {children}
       </SetDetailDataStateContext.Provider>
     </DetailDataStateContext.Provider>
   );
 }
-export function useDataStateContext() {
+
+export function useDetailDataStateContext() {
   const context = useContext(DetailDataStateContext);
 
   if (context === null) {
@@ -28,7 +29,7 @@ export function useDataStateContext() {
   return context;
 }
 
-export function useSetDataStateContext() {
+export function useSetDetailDataStateContext() {
   const context = useContext(SetDetailDataStateContext);
 
   if (context === null) {
