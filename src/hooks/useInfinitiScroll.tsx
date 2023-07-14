@@ -53,6 +53,6 @@ function useInfinitiScroll(
     dispatch(initPageNumber());
   };
 
-  return { observe, isLoadingState, pageStateRef };
+  return { observe, isLoadingState };
 }
 export default useInfinitiScroll;
