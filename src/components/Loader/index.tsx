@@ -13,7 +13,7 @@ const LoaderSpan = styled.span`
   display: inline-block;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
