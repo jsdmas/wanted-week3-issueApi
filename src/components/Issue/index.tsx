@@ -25,7 +25,7 @@ function Issue(props: IissueData) {
           </S.Item>
         </S.LinkStyle>
       ) : (
-        <S.LinkStyle to={props.ad?.link as string}>
+        <S.LinkStyle to={props.ad?.link}>
           <S.AdItem>
             <img src={props.ad?.image} alt={props.ad?.alt} />
           </S.AdItem>

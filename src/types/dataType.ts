@@ -36,7 +36,7 @@ export type Ad = {
   isAd: boolean;
 };
 
-interface Iuser {
+export interface Iuser {
   avatar_url: string;
   events_url: string;
   followers_url: string;

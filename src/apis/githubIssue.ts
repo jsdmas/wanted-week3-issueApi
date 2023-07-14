@@ -26,7 +26,7 @@ export const getGithubIssue = async (pageNumber: PageState) => {
   return data;
 };
 
-export const getDetailIssue = async (issueNumber: number) => {
+export const getDetailIssue = async (issueNumber?: string) => {
   const { data } = await axios.get(`${BASE_URL}facebook/react/issues/${issueNumber}`, {
     headers: {
       Accept: 'application/vnd.github+json',
