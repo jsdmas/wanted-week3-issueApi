@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { RootState } from '@/store';
-import { increase, PageState } from '@/store/issuePage';
+import { increase, initPageNumber, PageState } from '@/store/issuePage';
 import { startLoading, stopLoading } from '@/store/loading';
 import { IissueData } from '@/types/dataType';
 import addAd from '@/utils/addAdHelper';
@@ -45,7 +45,7 @@ function useInfinitiScroll(
 
   const observe = (element: HTMLElement) => {
     observer.current.observe(element);
-    pageStateRef.current = { page: 1 };
+    dispatch(initPageNumber());
   };
 
   return { observe, isLoadingState, pageStateRef };
