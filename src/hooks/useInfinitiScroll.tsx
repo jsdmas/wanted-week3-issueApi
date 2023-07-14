@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
+import { PATH } from '@/constants/path';
 import { RootState } from '@/store';
 import { increase, PageState } from '@/store/issuePage';
 import { startLoading, stopLoading } from '@/store/loading';
@@ -15,6 +17,7 @@ function useInfinitiScroll(
   const pageState = useSelector((store: RootState) => store.page);
   const isLoadingState = useSelector((store: RootState) => store.isLoading);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const pageStateRef = useRef(pageState);
 
@@ -25,13 +28,18 @@ function useInfinitiScroll(
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             dispatch(startLoading());
-            api(pageStateRef.current).then((data) => {
-              const addAdData = addAd(data);
+            api(pageStateRef.current)
+              .then((data) => {
+                const addAdData = addAd(data);
 
-              setDataState((prevData) => [...prevData, ...addAdData]);
-              dispatch(increase());
-              dispatch(stopLoading());
-            });
+                setDataState((prevData) => [...prevData, ...addAdData]);
+                dispatch(increase());
+                dispatch(stopLoading());
+              })
+              .catch((err) => {
+                navigate(PATH.ERROR_PAGE);
+                alert(err);
+              });
           }
         });
       },

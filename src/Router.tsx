@@ -7,6 +7,7 @@ import { PATH } from './constants/path';
 const Home = lazy(() => import('./pages/home/index'));
 const Issue = lazy(() => import('./pages/issuePage/index'));
 const NotFound = lazy(() => import('./pages/notFound/index'));
+const ErrorPage = lazy(() => import('./pages/ErrorPage/index'));
 
 function Router() {
   return (
@@ -16,6 +17,7 @@ function Router() {
           <Route path={PATH.HOME} element={<Home />} />
           <Route path={PATH.ISSUE_ID} element={<Issue />} />
           <Route path={PATH.ALL} element={<NotFound />} />
+          <Route path={PATH.ERROR_PAGE} element={<ErrorPage />} />
         </Routes>
       </Suspense>
     </BrowserRouter>
